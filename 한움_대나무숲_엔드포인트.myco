@@ -1,0 +1,106 @@
+export const COMMUNITY = {
+  BASE_URL: '/articles',
+  BLOCK: '/blocks',
+  MY_ARTICLES: '/users/@me/articles',
+  USER_MENTION: '/users/mentions/search',
+};
+
+src/api/community/comments/create.ts:
+  36    const { data } = await communityInstance.post(
+  37:     `${API_SUFFIX.COMMUNITY.BASE_URL}/${articleId}/comments`,
+  38      formData,
+
+src/api/community/comments/delete.ts:
+  14    const { data } = await communityInstance.delete(
+  15:     `${API_SUFFIX.COMMUNITY.BASE_URL}/${articleId}/comments/${commentId}`,
+  16    );
+
+src/api/community/comments/get.ts:
+  52    const { data } = await communityInstance.get(
+  53:     `${API_SUFFIX.COMMUNITY.BASE_URL}/${articleId}/comments`,
+  54      {
+
+src/api/community/comments/reactions.ts:
+  18    const { data } = await communityInstance.post(
+  19:     `${API_SUFFIX.COMMUNITY.BASE_URL}/${articleId}/comments/${commentId}/reactions`,
+  20      {
+
+src/api/community/etc/block.ts:
+  13    setAccessToken(token);
+  14:   const { data } = await communityInstance.put(`${API_SUFFIX.COMMUNITY.BLOCK}/${targetId}`);
+  15    return data;
+
+src/api/community/etc/getBlock.ts:
+  23    setAccessToken(token);
+  24:   const { data } = await communityInstance.get(API_SUFFIX.COMMUNITY.BLOCK, {
+  25      params: cursor,
+
+src/api/community/etc/getMyPosts.ts:
+  24    setAccessToken(token);
+  25:   const { data } = await communityInstance.get(`${API_SUFFIX.COMMUNITY.MY_ARTICLES}`, {
+  26      params: {
+
+src/api/community/etc/getUserMention.ts:
+  24    if (name === '') return null;
+  25:   const { data } = await communityInstance.get(`${API_SUFFIX.COMMUNITY.USER_MENTION}`, {
+  26      params: {
+
+src/api/community/etc/releaseBlock.ts:
+  12    setAccessToken(token);
+  13:   const { data } = await communityInstance.delete(`${API_SUFFIX.COMMUNITY.BLOCK}/${targetId}`);
+  14    return data;
+
+src/api/community/post/create.ts:
+  63  
+  64:   const { data } = await communityInstance.post(API_SUFFIX.COMMUNITY.BASE_URL, formData, {
+  65      headers: {
+
+src/api/community/post/delete.ts:
+  11    setAccessToken(token);
+  12:   const { data } = await communityInstance.delete(`${API_SUFFIX.COMMUNITY.BASE_URL}/${id}`);
+  13    return data;
+
+src/api/community/post/edit.ts:
+  37    const { data } = await communityInstance.patch(
+  38:     `${API_SUFFIX.COMMUNITY.BASE_URL}/${id}`,
+  39      formData,
+
+src/api/community/post/get.ts:
+  25    setAccessToken(token);
+  26:   const { data } = await communityInstance.get(`${API_SUFFIX.COMMUNITY.BASE_URL}`, {
+  27      params: {
+
+src/api/community/post/getById.ts:
+  21    setAccessToken(token);
+  22:   const { data } = await communityInstance.get(`${API_SUFFIX.COMMUNITY.BASE_URL}/${articleId}`);
+  23  
+
+src/api/community/post/reactions.ts:
+  17    const { data } = await communityInstance.post(
+  18:     `${API_SUFFIX.COMMUNITY.BASE_URL}/${articleId}/reactions`,
+  19      {
+
+src/api/community/post/search.ts:
+  24    setAccessToken(token);
+  25:   const { data } = await communityInstance.get(`${API_SUFFIX.COMMUNITY.BASE_URL}/search`, {
+  26      params: {
+
+src/api/community/reply/create.ts:
+  38    const { data } = await communityInstance.post(
+  39:     `${API_SUFFIX.COMMUNITY.BASE_URL}/${articleId}/comments/${commentId}/replies`,
+  40      formData,
+
+src/api/community/reply/delete.ts:
+  15    const { data } = await communityInstance.delete(
+  16:     `${API_SUFFIX.COMMUNITY.BASE_URL}/${articleId}/comments/${commentId}/replies/${replyId}`,
+  17    );
+
+src/api/community/reply/get.ts:
+  36    const { data } = await communityInstance.get(
+  37:     `${API_SUFFIX.COMMUNITY.BASE_URL}/${articleId}/comments/${commentId}/replies`,
+  38      {
+
+src/api/community/reply/reactions.ts:
+  22    const { data } = await communityInstance.post(
+  23:     `${API_SUFFIX.COMMUNITY.BASE_URL}/${articleId}/comments/${commentId}/replies/${replyId}/reactions`,
+  24      {
