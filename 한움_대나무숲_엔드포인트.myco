@@ -1,39 +1,116 @@
 POST "https://community.hanum.us/articles/${articleId}/comments"
 
+form data: isAnonymous, content
+
+`media upload support`
+
+----
+
 DELETE https://community.hanum.us/articles/${articleId}/comments/${commentId}
+
+----
 
 GET https://community.hanum.us/articles/${articleId}/comments
 
+params: limit, cursor
+
+----
+
 POST https://community.hanum.us/articles/${articleId}/comments/${commentId}/reactions
+
+body: emoji (string)
+
+----
 
 PUT https://community.hanum.us/blocks/${targetId}
 
+----
+
 GET https://community.hanum.us/blocks
+
+params: cursor
+
+----
+
+
 
 GET https://community.hanum.us/users/@me/articles
 
+----
+
 GET https://community.hanum.us/users/mentions/search
+
+params: name
+
+----
 
 DELETE https://community.hanum.us/blocks/${targetId}
 
+----
+
 POST https://community.hanum.us/articles
+
+form data: isAnonymous, author, content, scopeOfDisclosure (Public, Faculty, Alumni, Student, Peer)
+
+`media upload support`
+
+----
 
 DELETE https://community.hanum.us/articles/${id}
 
+----
+
 PATCH https://community.hanum.us/articles/${id}
+
+form data: content, KeepAttachments (number[])
+
+`media upload support`
+
+----
 
 GET https://community.hanum.us/articles
 
+params: scope, cursor, limit
+
+----
+
 GET https://community.hanum.us/articles/${articleId}
+
+----
 
 POST https://community.hanum.us/articles/${articleId}/reactions
 
+body: emoji (string) (ex: Heart)
+
+----
+
 GET https://community.hanum.us/articles/${articles}/search
+
+params: query, scope, cursor, limit
+
+----
 
 POST https://community.hanum.us/articles/${articleId}/comments/${commentId}/replies
 
+
+form data: isAnonymous, content
+
+`media upload support`
+
+----
+
 DELETE https://community.hanum.us/articles/${articleId}/comments/${commentId}/replies/${replyId}
+
+----
 
 GET https://community.hanum.us/articles/${articleId}/comments/${commentId}/replies
 
+params: cursor, limit
+
+----
+
 POST https://community.hanum.us/articles/${articleId}/comments/${commentId}/replies/${replyId}/reactions
+
+body: emoji (string)
+
+----
